@@ -3,6 +3,8 @@
 app/drupal/sites/default/settings.php
 app/drupal/board/cache
 app/drupal/board/config.php
+app/drupal/sites/default/files/.htaccess
+app/drupal/sites/default/files/less
 app/drupal/sites/default/files/imagecache
 app/drupal/sites/default/files/simpletest
 app/drupal/sites/default/files/css
