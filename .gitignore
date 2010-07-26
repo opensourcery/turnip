@@ -1,5 +1,7 @@
 .DS_Store
 *~
+.#*
+*#
 app/drupal/sites/default/settings.php
 app/drupal/board/cache
 app/drupal/board/config.php
