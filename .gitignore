@@ -14,3 +14,6 @@ app/drupal/sites/default/files/js
 app/drupal/sites/default/files/resize
 app/drupal/sites/default/files/ctools
 app/drupal/backup
+app/drupal/profiles/opensourcery_install/modules
+app/drupal/profiles/opensourcery_install/themes
+app/drupal/profiles/opensourcery_install/libraries
