@@ -5,6 +5,7 @@
 app/*/modules/contrib
 app/*/modules/stock
 app/*/themes/stock
+app/*/libraries
 app/drupal/sites/default/settings.php
 app/shared/files/.htaccess
 app/shared/files/less
