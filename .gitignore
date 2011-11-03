@@ -6,6 +6,7 @@ app/*/modules/development
 app/*/modules/contrib
 app/*/modules/stock
 app/*/themes/doune
+app/*/themes/omega
 app/*/themes/rubik
 app/*/themes/tao
 app/*/themes/zen
