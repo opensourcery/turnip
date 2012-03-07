@@ -10,6 +10,7 @@ app/*/themes/omega
 app/*/themes/rubik
 app/*/themes/tao
 app/*/themes/zen
+app/*/themes/lovejoy
 app/*/libraries
 app/shared/settings.php
 app/shared/files/.htaccess
