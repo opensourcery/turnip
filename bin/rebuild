@@ -5,7 +5,7 @@
 #
 # Rebuild os_project in the drupal directory.
 #
-# To use this command you must have `drush make`, `cvs` and `git` installed.
+# To use this command you must have Drush, Git and Compass installed.
 #
 
 PROFILE="os_project"
@@ -51,18 +51,15 @@ fi
 chmod 777 drupal/sites/default
 
 # Link settings.php and files into sites/default
-cd drupal/sites/default || { echo "Aborting $0"; exit 1; }
-ln -s ../../../shared/settings.php settings.php
-ln -s ../../../shared/files files
-cd -
+ln -s ../../../shared/settings.php drupal/sites/default/settings.php
+ln -s ../../../shared/files drupal/sites/default/files
 
 # Clean-up the profile directory, and sym-link it into the drupal directory.
 rsync -az drupal/profiles/$PROFILE/ $PROFILE/
 rm -rf drupal/profiles/$PROFILE
-cd drupal/profiles
-ln -s ../../$PROFILE $PROFILE
-cd -
+ln -s ../../$PROFILE drupal/profiles/$PROFILE
 
 # Compile SCSS files into CSS files using Compass.
-# Note that the theme should have a css and scss directory, or a config.rb file.
-compass compile drupal/profiles/$PROFILE/themes/$THEME
+if [ -e drupal/profiles/$PROFILE/themes/$THEME/config.rb ]; then
+  compass compile drupal/profiles/$PROFILE/themes/$THEME
+fi
