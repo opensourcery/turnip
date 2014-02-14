@@ -5,6 +5,8 @@ php:
   - 5.5
 rvm:
   - 2.0.0p247
+env:
+  - PATH=$PATH:/home/travis/.composer/vendor/bin
 
 before_install:
   - gem update --system
@@ -13,10 +15,17 @@ install:
   - git reset --hard
   - git clean -dxf
   - sudo apt-get update > /dev/null
-  - sudo apt-get install php5-curl > /dev/null
-  - sudo apt-get install php-pear
-  - sudo pear channel-discover pear.drush.org && sudo pear install drush/drush
-  - sudo drush
-  - sudo chown -R $USER:$USER /home/$USER/.drush
+  - sudo apt-get install php5-curl php5-gd php5-mysql > /dev/null
+  - composer global require drush/drush:6.*
+  - touch shared/settings.local.php
+  - mkdir shared/files
+before_script:
+  - mysql -e 'create database turnip'
+  # Init the settings file
+  # @todo make this a proper drush command instead of hacking.
+  - echo -e "<?php\n\$databases = array(\n  'default' => array(\n    'default' => array(\n      'database' => 'turnip',\n      'username' => 'travis',\n      'password' => '',\n      'host' => 'localhost',\n      'port' => '',\n      'driver' => 'mysql',\n      'prefix' => '',\n    ),\n  ),\n);\n\n\$conf['install_profile'] = 'client_xyz';\n" > shared/settings.local.php
+  - bin/make-install-profile client_xyz xyz_foobar "Web app ABC" "Client XYZ's ABC app enables users to browse a database of records."
+
 script:
   - bin/make-install-profile client_xyz xyz_foobar "Web app ABC" "Client XYZ's ABC app enables users to browse a database of records."
+  - bin/install --nohat --nobuild
