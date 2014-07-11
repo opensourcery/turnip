@@ -11,13 +11,13 @@ projects[context_admin][version] = "1.2"
 
 projects[chosen][version] = 2.0-beta4
 
-projects[ctools][version] = "1.3"
+projects[ctools][version] = "1.4"
 ; http://drupal.org/node/1120028#comment-5792282
 projects[ctools][patch][] = "http://drupal.org/files/page-manager-admin-paths-1120028-08.patch"
 ; https://drupal.org/node/1417630#comment-6810906
 projects[ctools][patch][] = "https://drupal.org/files/ctools-views-content-custom-url-1417630-06.patch"
 
-projects[entity][version] = "1.4"
+projects[entity][version] = "1.5"
 
 projects[entitycache][version] = "1.2"
 
@@ -47,7 +47,7 @@ projects[footable][download][revision] = "0878571"
 ; Support later FooTable library: https://drupal.org/node/2212881#comment-8734427
 projects[footable][patch][] = "https://drupal.org/files/issues/footable-v2-2212881-01.patch"
 
-projects[google_analytics][version] = "1.3"
+projects[google_analytics][version] = "1.4"
 
 projects[html5_tools][download][branch] = "7.x-1.x"
 projects[html5_tools][download][revision] = "11e0c28"
@@ -57,11 +57,11 @@ projects[jquery_update][download][revision] = "469fac0"
 
 projects[link][version] = "1.2"
 
-projects[linkchecker][version] = "1.1"
+projects[linkchecker][version] = "1.2"
 
 projects[linked_field][version] = "1.9"
 
-projects[menu_block][version] = "2.3"
+projects[menu_block][version] = "2.4"
 
 projects[menu_position][version] = "1.1"
 
@@ -81,7 +81,7 @@ projects[strongarm][version] = "2.0"
 
 projects[token][version] = "1.5"
 
-projects[views][version] = "3.7"
+projects[views][version] = "3.8"
 
 projects[wysiwyg][download][branch] = "7.x-2.x"
 projects[wysiwyg][download][revision] = "ee64524"
