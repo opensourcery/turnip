@@ -45,6 +45,12 @@ for i in "$@"; do
     --compass=*)
     compass="${i#*=}"
     ;;
+    --projects=*)
+    projects="${i#*=}"
+    ;;
+    --libraries=*)
+    libraries="${i#*=}"
+    ;;
     --no-backup)
     no_backup=1
     ;;
@@ -57,6 +63,21 @@ for i in "$@"; do
     ;;
   esac
 done
+
+# If the --projects or --libraries flags were specified, then only
+# build the specified projects and/or libraries.
+if [ -n "$projects" ] || [ -n "$libraries" ]; then
+  echo "Limiting build to specified packages..."
+  if [ -n "$projects" ]; then
+    proj="--projects=$projects"
+  fi
+  if [ -n "$libraries" ]; then
+    lib="--libraries=$libraries"
+  fi
+  drush make $drush --contrib-destination=$PROFILE --no-core -y $proj $lib $PROFILE/$PROFILE.make
+  echo "Package rebuild succeeded."
+  exit
+fi
 
 # Remove contrib directories
 DIRECTORIES="drupal
