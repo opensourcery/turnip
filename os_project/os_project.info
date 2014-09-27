@@ -60,7 +60,7 @@ users[admin][data][overlay] = 0
 ;
 ; Variables
 ;
-;variables[site_frontpage] = TODO
+variables[site_frontpage] = welcome
 ;variables[site_404] =
 variables[site_mail] = admin@os_project.dev
 variables[site_name] = PROJECTNAME
