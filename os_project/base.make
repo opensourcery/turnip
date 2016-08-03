@@ -9,6 +9,8 @@ projects[breakpoints][version] = "1.3"
 
 projects[context_admin][version] = "1.2"
 
+projects[chosen][version] = 2.0-beta4
+
 projects[ctools][version] = "1.4"
 ; http://drupal.org/node/1120028#comment-5792282
 projects[ctools][patch][] = "http://drupal.org/files/page-manager-admin-paths-1120028-08.patch"
@@ -137,6 +139,9 @@ projects[diff][version] = "3.2"
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 libraries[backbone][download][type] = "get"
 libraries[backbone][download][url] = "https://github.com/jashkenas/backbone/archive/1.0.0.tar.gz"
+
+libraries[chosen][download][type] = "get"
+libraries[chosen][download][url] = "https://github.com/harvesthq/chosen/releases/download/1.0.0/chosen_v1.0.0.zip"
 
 libraries[ckeditor][download][type] = "get"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.3.2/ckeditor_4.3.2_full.zip"
